@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { JWT_SECRET } = require('../keys');
-const UserModel = require('../models/User');
+const UserModel = require('../models/UserModel');
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
@@ -16,10 +16,10 @@ module.exports = (req, res, next) => {
     UserModel.findById(_id)
       .then((userData) => {
         req.user = userData;
+        next();
       })
       .catch((err) => {
         console.log(err);
       });
-    next();
   });
 };

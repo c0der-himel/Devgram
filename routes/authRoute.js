@@ -1,18 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const { JWT_SECRET } = require('../keys');
-const UserModel = require('../models/User');
+const UserModel = require('../models/UserModel');
 const requireLogin = require('../middleware/requireLogin');
 
 router.get('/', (req, res) => {
-  res.send('Hello');
-});
-
-router.get('/protected', requireLogin, (req, res) => {
   res.send('Hello');
 });
 
