@@ -4,14 +4,13 @@ const morgan = require('morgan');
 
 const { MONGOURI } = require('./keys');
 const UserModel = require('./models/User');
+const router = require('./routes/auth');
 
 const app = express();
 
 app.use(morgan('dev'));
-
-app.get('/', (req, res) => {
-  res.send(/* html */ `<h1>Hello World</h1>`);
-});
+app.use(express.json());
+app.use(router);
 
 const PORT = process.env.PORT || 5000;
 
