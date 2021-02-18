@@ -4,6 +4,17 @@ const router = express.Router();
 const PostModel = require('../models/PostModel');
 const requireLogin = require('../middleware/requireLogin');
 
+router.get('/all-post', (req, res) => {
+  PostModel.find()
+    .populate('postedBy', '_id name')
+    .then((posts) => {
+      res.json({ posts });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.post('/create', requireLogin, (req, res) => {
   const { title, body } = req.body;
   if (!title || !body) {
