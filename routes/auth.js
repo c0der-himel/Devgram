@@ -18,19 +18,21 @@ router.post('/signup', (req, res) => {
       if (savedUser) {
         return res.status(422).json({ error: 'Please, fill all the fields' });
       }
-      const user = new UserModel({
-        name,
-        email,
-        password,
-      });
-      user
-        .save()
-        .then((user) => {
-          res.json({ message: 'data saved' });
-        })
-        .catch((err) => {
-          console.log(err);
+      bcrypt.hash(password, 11).then((hashedPassword) => {
+        const user = new UserModel({
+          name,
+          email,
+          password: hashedPassword,
         });
+        user
+          .save()
+          .then((user) => {
+            res.json({ message: 'data saved' });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
     })
     .catch((err) => {
       console.log(err);
