@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
+const { JWT_SECRET } = require('../keys');
 const UserModel = require('../models/User');
 
 router.get('/', (req, res) => {
@@ -53,7 +55,9 @@ router.post('/signin', (req, res) => {
         .compare(password, savedData.password)
         .then((doMatch) => {
           if (doMatch) {
-            res.json({ message: 'successfully signed in' });
+            // res.json({ message: 'successfully signed in' });
+            const token = jwt.sign({ _id: savedData._id }, JWT_SECRET);
+            res.json({ token });
           } else {
             return res.status(422).json({ error: 'invalid email or password' });
           }
