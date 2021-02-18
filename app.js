@@ -4,7 +4,7 @@ const morgan = require('morgan');
 
 const { MONGOURI } = require('./keys');
 const UserModel = require('./models/User');
-const router = require('./routes/auth');
+const router = require('./routes/authRoute');
 
 const app = express();
 
