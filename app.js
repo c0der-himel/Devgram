@@ -1,16 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const { MONGOURI } = require('./keys');
 // const UserModel = require('./models/UserModel');
 // const PostModel = require('./models/PostModel');
 const authRouter = require('./routes/authRoute');
 const postRouter = require('./routes/postRoute');
+
 const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors());
 app.use(authRouter);
 app.use(postRouter);
 

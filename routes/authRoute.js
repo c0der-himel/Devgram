@@ -13,8 +13,9 @@ router.get('/', (req, res) => {
 
 router.post('/signup', (req, res) => {
   const { name, email, password } = req.body;
-  if (!name || !email || !password)
+  if (!name || !email || !password) {
     return res.status(422).json({ error: 'Please, fill all the fields' });
+  }
   UserModel.findOne({ email })
     .then((savedUser) => {
       if (savedUser) {
