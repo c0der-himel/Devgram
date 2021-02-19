@@ -15,12 +15,7 @@ body {
 
 /* === Home === */
 .Home {
-  margin: 100px;
-}
-
-.home-img img {
-  width: 1000px;
-  height: 350px;
+  margin: 125px 0;
 }
 
 /* === Navbar === */
@@ -30,7 +25,7 @@ body {
 
 /* === Login === */
 .Login {
-  padding: 150px 0;
+  padding: 125px 0;
 }
 
 .login-link {
@@ -40,12 +35,12 @@ body {
 
 /* === Signup === */
 .Signup {
-  padding: 150px 0;
+  padding: 125px 0;
 }
 
 /* === Profile === */
 .Profile {
-  padding: 150px 0;
+  padding: 125px 0;
 }
 
 .profile-img img {
@@ -61,4 +56,9 @@ body {
 .profile-gallery img {
   height: 300px;
   width: 250px;
+}
+
+/* === Create Post === */
+.Create-Post {
+  padding: 125px 0;
 }
