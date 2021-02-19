@@ -85,10 +85,7 @@ const Signup = () => {
                   />
                 </div>
                 <div className="mt-4 d-grid">
-                  <button
-                    className="btn btn-dark py-2"
-                    onClick={() => signUpData()}
-                  >
+                  <button className="btn btn-dark py-2" onClick={signUpData}>
                     Signup
                   </button>
                 </div>

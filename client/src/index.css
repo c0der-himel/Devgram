@@ -15,7 +15,8 @@ body {
 
 /* === Home === */
 .Home {
-  margin: 125px 0;
+  padding-top: 125px;
+  padding-bottom: 50px;
 }
 
 /* === Navbar === */
