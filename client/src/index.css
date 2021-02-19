@@ -14,8 +14,13 @@ body {
 }
 
 /* === Home === */
-.test {
-  margin-top: 100px;
+.Home {
+  margin: 100px;
+}
+
+.home-img img {
+  width: 1000px;
+  height: 350px;
 }
 
 /* === Navbar === */
@@ -36,4 +41,24 @@ body {
 /* === Signup === */
 .Signup {
   padding: 150px 0;
+}
+
+/* === Profile === */
+.Profile {
+  padding: 150px 0;
+}
+
+.profile-img img {
+  height: 175px;
+  width: 175px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.profile-gallery img {
+  height: 300px;
+  width: 250px;
 }
